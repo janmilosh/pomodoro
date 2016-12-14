@@ -1,0 +1,109 @@
+$icon-font-path: '../fonts/';
+$outer: #158b99;
+$inner: darken($outer, 7%);
+$background: #222;
+$text: $outer;
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background: url('../images/white_brick_wall.png');
+  color: $text;
+  font-family: 'Varela Round', sans-serif;
+}
+
+span.json {
+  white-space: pre;
+  font-family: monospace;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: white;
+  font-size: 44px;
+  position: relative;
+  top: 97px;
+  z-index: 1000;
+  cursor: pointer;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+  .num {
+    font-size: 60px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: rgba(256, 256, 256, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-container {
+  width: 300px;
+}
+
+.circles {
+  position: relative;
+  margin-top: -125px;
+  width: 300px;
+  height: 300px;
+}
+
+svg {
+  cursor: pointer;
+}
+
+svg.outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  circle {
+    /*fill: $outer;
+    stroke: $inner;*/
+    stroke-width: 300;
+  }
+}
+
+svg.inner {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  circle {
+    /*fill: $inner;
+    stroke: $outer;*/
+    stroke-width: 150;
+  }
+}
+
+circle.v1 {
+  fill: $inner;
+  stroke: $outer;
+}
+
+circle.v2 {
+  fill: $outer;
+  stroke: $inner;
+}
