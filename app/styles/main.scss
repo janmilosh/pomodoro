@@ -28,7 +28,7 @@ h1, h2 {
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin: 0 0 30px;
 }
 
 h2 {
@@ -98,6 +98,10 @@ svg.inner {
   }
 }
 
+circle {
+  fill: $outer;
+}
+
 circle.v1 {
   fill: $inner;
   stroke: $outer;
@@ -106,4 +110,27 @@ circle.v1 {
 circle.v2 {
   fill: $outer;
   stroke: $inner;
+}
+
+.glyphicon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.session p,
+.break p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.session {
+  width: 85px;
+  text-align: center;
+  float: left;
+}
+
+.break {
+  width: 85px;
+  text-align: center;
+  float: right;
 }

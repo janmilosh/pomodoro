@@ -30,6 +30,16 @@
             <circle v-bind:class="innerClass" v-bind:stroke-dasharray="innerDash" r="75" cx="75" cy="75" />
           </svg>
         </div>
+        <div class="session">
+          <span @click="increaseSession()" class="glyphicon glyphicon-chevron-up"></span>
+          <p>Session</p>
+          <span @click="decreaseSession()" class="glyphicon glyphicon-chevron-down"></span>
+        </div>
+        <div class="break">
+          <span @click="increaseBreak()" class="glyphicon glyphicon-chevron-up"></span>
+          <p>Break</p>
+          <span @click="decreaseBreak()" class="glyphicon glyphicon-chevron-down"></span>
+        </div>
         <!-- <span class="json">{{JSON.stringify($data, undefined, 2)}}</span> -->
       </div>
     </div>

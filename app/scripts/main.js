@@ -75,6 +75,7 @@ var vm = new Vue({
             self.outerCurrentDash = 0;
             self.switchOuterColors = !self.switchOuterColors;
             self.elapsedSec = 0;
+            self.playSound();
           })
         }
       }
@@ -89,8 +90,48 @@ var vm = new Vue({
           self.innerCurrentDash = 0;
           self.switchInnerColors = !self.switchInnerColors;
           self.elapsedSec = 0;
+          self.playSound();
         }
       }
+    },
+    increaseSession: function() {
+      if (this.maxWorkMin < 61) {
+        this.maxWorkMin += 1;
+        this._adjustOuter()
+      } 
+    },
+    decreaseSession: function() {
+      if (this.maxWorkMin > 1) {
+        this.maxWorkMin -= 1;
+        this._adjustOuter();
+      }
+    },
+    _adjustOuter: function() {
+      if (this.working) {
+        this.outerCurrentDash = this.elapsedSec*this.outerMaxDash/this.maxWorkSec;
+      } 
+    },
+    increaseBreak: function() {
+      if (this.maxBreakMin < 61) {
+        this.maxBreakMin += 1;
+        this._adjustInner();
+      } 
+    },
+    decreaseBreak: function() {
+      if (this.maxBreakMin > 1) {
+        this.maxBreakMin -= 1;
+        this._adjustInner();
+      }
+    },
+    _adjustInner: function() {
+      if (!this.working) {
+        this.innerCurrentDash = this.elapsedSec*this.innerMaxDash/this.maxBreakSec;
+      }
+    },
+    playSound: function() {
+      var sound = new Audio('sounds/harp.wav');
+      sound.load();
+      sound.play();
     }
   },
   filters: {
