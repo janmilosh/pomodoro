@@ -32,12 +32,12 @@
         </div>
         <div class="session">
           <span @click="increaseSession()" class="glyphicon glyphicon-chevron-up"></span>
-          <p>Session</p>
+          <p>Session: {{maxWorkMin}}</p>
           <span @click="decreaseSession()" class="glyphicon glyphicon-chevron-down"></span>
         </div>
         <div class="break">
           <span @click="increaseBreak()" class="glyphicon glyphicon-chevron-up"></span>
-          <p>Break</p>
+          <p>Break: {{maxBreakMin}}</p>
           <span @click="decreaseBreak()" class="glyphicon glyphicon-chevron-down"></span>
         </div>
         <!-- <span class="json">{{JSON.stringify($data, undefined, 2)}}</span> -->
